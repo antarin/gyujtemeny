@@ -1,6 +1,6 @@
 # Gyűjtemény
 
-Kisebb programok, gykorlások gyűteménye.
+Kisebb programok, gyakorlások gyűteménye.
 
 Készült:
 - HTML
