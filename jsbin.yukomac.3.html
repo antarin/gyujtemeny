@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by antarin (http://jsbin.com/yukomac/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Kis programok gyűjteménye">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <title>JS Bin</title>
+<style id="jsbin-css">
+.main {
+  height: 4rem;
+  padding: 1rem 1rem;
+  margin: 0 0 1rem;
+}
+</style>
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="text-center">Kis programok gyűjteménye</h1>
+      <p class="text-center">Gyakorlások, feladatok, saját munkák gyűjteménye egy helyen.</p>
+    </div>
+    <div  class="container">
+      <div class="row">
+        <div id="marvin" class="col-sm-3 btn-primary text-center main">Marvin</div>
+        <div id="rosie" class="col-sm-3 btn-info text-center main">Rosie</div>
+        <div id="oscar" class="col-sm-3 btn-success text-center main">Oscar</div>
+        <div id="bernard" class="col-sm-3 btn-danger text-center main">Bernard</div>
+      </div>
+    </div>
+  </div>
+<script id="jsbin-javascript">
+var marv = document.getElementById('marvin');
+var rosi = document.getElementById('rosie');
+var osca = document.getElementById('oscar');
+var bern = document.getElementById('bernard');
+
+
+marv.addEventListener('click', marvinTheConverter);
+rosi.addEventListener('click', rosieTheFortuneTeller);
+osca.addEventListener('click', oscarTheLifetimeSupplier);
+bern.addEventListener('click', bernardTheLetterCounter);
+
+
+
+function marvinTheConverter () {
+  var celsius = prompt('What is the temperature outside, in °C?');
+  var fahrenheit = celsius * 9 / 5 + 32;
+  alert('The temperature outside in farenheit is '+fahrenheit+'.');
+  return;
+};
+
+
+
+function rosieTheFortuneTeller() {
+  var jovoAll = ['turtle', 'rose', 'teacup', 'moon'];
+  var nev = prompt('Hi, dear! My name is Rosie and I am an expert fortune teller. What is your name?');
+  var jovo = prompt('Yes, I have seen that you would come to me, '+nev+'. Now please, choose one from the following and type it in the box: turtle, rose, teacup, moon.');
+  alert('Hmm... '+jovo+'. Excellent choice. Let us see what your future holds.');
+  if (jovoAll.indexOf(jovo) == 0) {
+      alert('Here is your fortune: Don’t panic. ');
+    } else if (jovoAll.indexOf(jovo) == 1) {
+      alert('Here is your fortune: You will find a thing. It may be important.');
+    } else if (jovoAll.indexOf(jovo) == 2) {
+      alert('Here is your fortune: The end is near, might as well have dessert.');
+    } else if (jovoAll.indexOf(jovo) == 3) {
+      alert('Here is your fortune: Look before you leap. Or wear a parachute.');
+    } else {
+    alert('I am sorry, '+nev+'. I do not think I understand you correctly. Are you sure you typed in one of the offered possibilities?');
+  }
+  return;
+}
+
+
+
+function oscarTheLifetimeSupplier() {
+  var age = prompt('Hi, how old are you?');
+  var live = prompt('What do u think how long u will live?');
+  var cookie = prompt('What is your favorite snack?');
+  var cookieWeek = prompt('How many snaks u eat on a week?');
+  var allCookie = ((live-age)*52)*cookieWeek;
+  alert('You will need '+allCookie+' '+cookie+' until you reach '+live+'.');
+}
+
+
+function bernardTheLetterCounter() {
+  var sent = prompt('Hi! Please give me a sentence for analysis');
+  var letter = prompt('Which letter u want to count in the sentence?');
+  var count = 0;
+  for (i = 0; i < sent.length; i++) {
+    if (sent.charAt(i) == letter) {
+      count++;
+    }
+  }
+  alert(count+' piece '+letter+' are in the sentence.');
+}
+
+
+
+</script>
+</body>
+</html>
